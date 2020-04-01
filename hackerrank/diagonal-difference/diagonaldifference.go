@@ -1,5 +1,9 @@
 package hackerrank
 
+import (
+	"math"
+)
+
 // DiagonalDifference calculate the difference for a square of matrix
 // Given a square matrix,
 // calculate the absolute difference between the sums of its diagonals.
@@ -11,6 +15,19 @@ package hackerrank
 // The right to left diagonal = 3 + 5 + 9 = 17.
 // Their absolute difference is = [15-17] = 2
 func DiagonalDifference(arr [][]int32) int32 {
-
-	return 0
+	lsum := int32(0)
+	rsum := int32(0)
+	lens := len(arr)
+	for i := 0; i < lens; i++ {
+		for j := 0; j < lens; j++ {
+			if i == j {
+				lsum += arr[i][j]
+			}
+			if i+j == lens-1 {
+				rsum += arr[i][j]
+			}
+		}
+	}
+	dif := math.Abs(float64(lsum - rsum))
+	return int32(dif)
 }
