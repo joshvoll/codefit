@@ -25,3 +25,19 @@ func divisibleSumPairs(n, k int32, ar []int32) int32 {
 	}
 	return res
 }
+
+// divisibleSumPairs2 attent to do the solution on a golang way
+func divisibleSumPairs2(n, k int32, ar []int32) int32 {
+	var count int32
+	for _, v := range ar {
+		for _, d := range ar {
+			if v < d {
+				a := v + d
+				if a%k == 0 {
+					count++
+				}
+			}
+		}
+	}
+	return count
+}
