@@ -8,9 +8,12 @@ func TestMigratorBirds(t *testing.T) {
 	if res != 3 {
 		t.Fatalf("want 3, got %v ", res)
 	}
+}
+
+func TestMigratorBirds2(t *testing.T) {
 	tc1 := []int32{1, 1, 2, 2, 3}
 	res1 := migratoryBirds(tc1)
 	if res1 != 1 {
-		t.Fatalf("want 1, got %v ", res)
+		t.Fatalf("want 1, got %v ", res1)
 	}
 }

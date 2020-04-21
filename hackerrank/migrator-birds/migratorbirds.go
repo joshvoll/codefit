@@ -1,12 +1,26 @@
-package hackerrank
+package main
 
-func migratoryBirds(arr []int32) int32 {
-	max, occ := arr[0], int32(0)
-	for i, v := range arr {
-		if v > max {
-			max = v
-			occ = int32(i) - 1
+import "fmt"
+
+func main() {
+	var n, t int
+
+	fmt.Scan(&n)
+
+	a := make([]int, 5)
+
+	for i := 0; i < n; i++ {
+		fmt.Scan(&t)
+		t = t - 1
+		a[t]++
+	}
+	fmt.Println("final array : ", a)
+	max, occ := a[0], 0
+	for i, num := range a {
+		if num > max {
+			max = num
+			occ = i + 1
 		}
 	}
-	return occ
+	fmt.Println(occ)
 }
