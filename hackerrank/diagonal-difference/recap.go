@@ -17,3 +17,13 @@ func DiagonalDifferenceRecap(arr [][]int32) int32 {
 	}
 	return rsum - lsum
 }
+
+// DiagonalDifferenceRecap2 is the diagonal recap better
+func DiagonalDifferenceRecap2(arr [][]int32) int32 {
+	diff := int32(0)
+	lens := int32(len(arr))
+	for i := int32(0); i < lens; i++ {
+		diff += arr[i][lens-i-1] - arr[i][i]
+	}
+	return diff
+}
