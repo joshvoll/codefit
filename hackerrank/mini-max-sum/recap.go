@@ -20,6 +20,7 @@ func MiniMaxSumRecap(arr []int32) {
 
 func miniMaxSumRecap(arr []int32) {
 	var total, min, max int64 = 0, 0, 0
+	min = int64(arr[0])
 	for i := int64(0); i < int64(len(arr)); i++ {
 		total += int64(arr[i])
 		if int64(arr[i]) < min {
