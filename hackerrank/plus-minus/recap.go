@@ -9,8 +9,9 @@ func plusMinusRecap(ar []int32) {
 			negative++
 		} else if int32(ar[i]) > 0 {
 			positive++
+		} else {
+			zero++
 		}
-		zero++
 	}
 	lens := int32(len(ar))
 	fmt.Println("recap negative: ", float64(negative)/float64(lens))
