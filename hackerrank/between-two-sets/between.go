@@ -1,7 +1,5 @@
 package hackerrrank
 
-import "fmt"
-
 func getTotalX(a []int32, b []int32) int32 {
 	c := int32(0)
 	for i := int32(1); i <= 100; i++ {
@@ -22,8 +20,9 @@ func getTotalX(a []int32, b []int32) int32 {
 		}
 		if factor {
 			c++
+
 		}
 	}
-	fmt.Println(c)
+
 	return c
 }
